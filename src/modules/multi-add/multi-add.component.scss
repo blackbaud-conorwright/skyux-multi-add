@@ -1,0 +1,39 @@
+.sky-btn-danger {
+  background-color: #f7a08f;
+  border-color: #ef4044;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+.sky-btn-success {
+  background-color: #b7da9b;
+  border-color: #71bf43;
+  &:hover {
+    opacity: 0.75;
+  }
+}
+
+.added-item-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.added-item-label {
+  margin: 0;
+  padding: 5px;
+}
+
+.multi-add-entry {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.multi-add-entry-add-button {
+  flex-basis: 0;
+}
+
+.multi-add-display {
+  max-height: 168px;
+  overflow-y: auto;
+}

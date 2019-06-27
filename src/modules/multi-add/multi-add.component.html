@@ -1,0 +1,55 @@
+<div
+  class="multi-add-display"
+>
+  <sky-repeater>
+    <sky-repeater-item *ngFor="let value of values">
+      <sky-repeater-item-content>
+        <div
+          class="added-item-row"
+        >
+          <h3
+            class="added-item-label"
+          >
+            {{ value }}
+          </h3>
+          <button
+            aria-label="Remove item"
+            class="sky-btn sky-btn-danger added-item-remove-btn"
+            [disabled]="disabled"
+            (click)="removeValue(value)"
+          >
+            <sky-icon
+              icon="trash"
+            >
+            </sky-icon>
+          </button>
+        </div>
+      </sky-repeater-item-content>
+    </sky-repeater-item>
+  </sky-repeater>
+</div>
+<div
+  class="multi-add-entry"
+>
+  <input
+    aria-label="Name of item to add"
+    class="sky-form-control"
+    type="text"
+    [disabled]="disabled"
+    [id]="inputId"
+    [placeholder]="placeholder"
+    [(ngModel)]="valueAdd"
+    (keypress)="keyDownEvent($event)"
+  />
+  <button
+    aria-label="Add new item"
+    class="sky-btn sky-btn-secondary sky-form-control sky-btn-success multi-add-entry-add-button"
+    [disabled]="disabled"
+    (click)="addValue()"
+  >
+    <sky-icon
+      icon="plus"
+    >
+    </sky-icon>
+  </button>
+</div>

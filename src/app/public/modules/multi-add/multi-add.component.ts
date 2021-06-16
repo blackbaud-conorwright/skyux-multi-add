@@ -41,6 +41,9 @@ export class SkyMultiAddComponent implements ControlValueAccessor {
   public isValid: Function;
 
   @Input()
+  public requireUnique: boolean = true;
+
+  @Input()
   public placeholder: string = '';
 
   @Input()
@@ -87,7 +90,7 @@ export class SkyMultiAddComponent implements ControlValueAccessor {
 
   private checkIfValid(value: string) {
     let isValid = this.isValid ? this.isValid(this.valueAdd) : this.valueAdd;
-    let isUnique = this.values.filter(val => val === value).length === 0;
+    let isUnique = !this.requireUnique || this.values.filter(val => val === value).length === 0;
     return isValid && isUnique;
   }
 
